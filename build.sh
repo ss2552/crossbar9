@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 TARGET=thumbv5te-none-eabi
 
 if [ "$#" -lt 1 ]; then
