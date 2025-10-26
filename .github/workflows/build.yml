@@ -1,0 +1,25 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkitarm
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+      
+      - name: ビルド
+        run: |
+          ./build.sh
+
+      - name: アップロード
+        uses: actions/upload-artifact@v3
+        with:
+          name: crossbar7
+          path: ./
