@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s --y --default-toolchain nightly
 
 TARGET=thumbv5te-none-eabi
 
